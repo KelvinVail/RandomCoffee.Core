@@ -1,8 +1,11 @@
 ﻿namespace RandomCoffee
 {
     using System;
+    using System.Globalization;
 
-    public readonly struct Person : IEquatable<Person>
+#pragma warning disable CA1036 // Override methods on comparable types
+    public readonly struct Person : IEquatable<Person>, IComparable<Person>
+#pragma warning restore CA1036 // Override methods on comparable types
     {
         private readonly string firstname;
         private readonly string lastname;
@@ -27,9 +30,7 @@
 
         public bool Equals(Person other)
         {
-            return this.firstname == other.firstname
-                   && this.lastname == other.lastname
-                   && this.emailAddress == other.emailAddress;
+            return this.GetHashCode() == other.GetHashCode();
         }
 
         public override bool Equals(object obj)
@@ -41,6 +42,14 @@
         public override int GetHashCode()
         {
             return HashCode.Combine(this.firstname, this.lastname, this.emailAddress);
+        }
+
+        public int CompareTo(Person other)
+        {
+            return string.Compare(
+                this.GetHashCode().ToString(CultureInfo.InvariantCulture),
+                other.GetHashCode().ToString(CultureInfo.InvariantCulture),
+                StringComparison.Ordinal);
         }
     }
 }
