@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RandomCoffee\RandomCoffee.csproj" />
+    <ProjectReference Include="..\RandomCoffee\RandomCoffee.Core.csproj" />
   </ItemGroup>
 
 </Project>
