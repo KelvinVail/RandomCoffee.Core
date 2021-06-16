@@ -45,7 +45,7 @@ namespace RandomCoffee.Core.Tests
         [Fact]
         public async Task ThrowBadRequestIfGroupContainsSingleEntry()
         {
-            _persons.Add(new Person { FullName = "Single" });
+            AddPersonToRequest("A");
 
             var ex = await Assert.ThrowsAsync<BadRequestException>(CreateMatches);
             Assert.Equal("'Request' must contain more than one person to make a match.", ex.Message);
@@ -54,8 +54,8 @@ namespace RandomCoffee.Core.Tests
         [Fact]
         public async Task TwoPeopleAreMatchedAndSentToNotifier()
         {
-            _persons.Add(new Person { FullName = "A" });
-            _persons.Add(new Person { FullName = "B" });
+            AddPersonToRequest("A");
+            AddPersonToRequest("B");
 
             await CreateMatches();
 
@@ -65,10 +65,10 @@ namespace RandomCoffee.Core.Tests
         [Fact]
         public async Task FourPeopleAreSortedAndMatchedInOrder()
         {
-            _persons.Add(new Person { FullName = "A" });
-            _persons.Add(new Person { FullName = "C" });
-            _persons.Add(new Person { FullName = "B" });
-            _persons.Add(new Person { FullName = "D" });
+            AddPersonToRequest("A");
+            AddPersonToRequest("C");
+            AddPersonToRequest("B");
+            AddPersonToRequest("D");
 
             await CreateMatches();
 
@@ -79,11 +79,11 @@ namespace RandomCoffee.Core.Tests
         [Fact]
         public async Task FivePeopleAreMatchedIntoTwoGroups()
         {
-            _persons.Add(new Person { FullName = "A" });
-            _persons.Add(new Person { FullName = "C" });
-            _persons.Add(new Person { FullName = "B" });
-            _persons.Add(new Person { FullName = "D" });
-            _persons.Add(new Person { FullName = "E" });
+            AddPersonToRequest("A");
+            AddPersonToRequest("C");
+            AddPersonToRequest("B");
+            AddPersonToRequest("D");
+            AddPersonToRequest("E");
 
             await CreateMatches();
 
@@ -93,5 +93,8 @@ namespace RandomCoffee.Core.Tests
 
         private Task CreateMatches() =>
             _handler.Handle(_request);
+
+        private void AddPersonToRequest(string name) =>
+            _persons.Add(new Person { FullName = name });
     }
 }
