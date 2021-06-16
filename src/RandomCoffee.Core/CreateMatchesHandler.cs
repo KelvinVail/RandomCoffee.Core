@@ -39,14 +39,18 @@ namespace RandomCoffee.Core
         }
 
         private static bool LastMatchIsSingle(IEnumerable<Match> matches) =>
-            matches.Last().Persons.Count() == 1;
+            matches.Last().Persons.Count == 1;
 
-        private static IEnumerable<Match> MergeLastTwoGroups(IList<Match> matches) =>
-            ReplaceLastTwoWith(matches, GetMergedGroup(matches));
+        private static IEnumerable<Match> MergeLastTwoGroups(IList<Match> matches)
+        {
+            matches[^2].Persons.Add(matches[^1].Persons.Single());
+            return RemoveLast(matches);
+        }
+            //ReplaceLastTwoWith(matches, GetMergedGroup(matches));
 
         private static Match GetMergedGroup(IList<Match> matches)
         {
-            var secondToLastGroup = RemoveLast(matches).Last().Persons.ToList();
+            var secondToLastGroup = RemoveLast(matches).Last().Persons;
             secondToLastGroup.Add(matches.Last().Persons.Single());
             return new Match(secondToLastGroup);
         }
