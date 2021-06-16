@@ -1,4 +1,4 @@
-﻿namespace RandomCoffee.Core
+﻿namespace RandomCoffee.Core.Entities
 {
     public record Person
     {

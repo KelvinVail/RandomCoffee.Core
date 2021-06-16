@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace RandomCoffee.Core
+namespace RandomCoffee.Core.Entities
 {
     public record Match
     {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using RandomCoffee.Core.Entities;
 
 namespace RandomCoffee.Core
 {

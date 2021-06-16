@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using RandomCoffee.Core.Entities;
 using RandomCoffee.Core.Exceptions;
 using RandomCoffee.Core.Tests.TestDoubles;
 using Xunit;
@@ -16,7 +17,7 @@ namespace RandomCoffee.Core.Tests
         public CreateMatchesHandlerTests()
         {
             _request.Persons = _persons;
-            _handler = new CreateMatchesHandler(_notifier);
+            _handler = new CreateMatchesHandler(_notifier, new AlphabeticalSorterStub());
         }
 
         [Fact]

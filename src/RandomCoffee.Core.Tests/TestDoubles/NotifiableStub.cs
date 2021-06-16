@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using RandomCoffee.Core.Contracts;
+using RandomCoffee.Core.Entities;
 using Xunit;
 
 namespace RandomCoffee.Core.Tests.TestDoubles
