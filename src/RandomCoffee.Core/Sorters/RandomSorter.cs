@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using RandomCoffee.Core.Contracts;
 using RandomCoffee.Core.Entities;
 
-namespace RandomCoffee.Core
+namespace RandomCoffee.Core.Sorters
 {
     public class RandomSorter : ISorter
     {

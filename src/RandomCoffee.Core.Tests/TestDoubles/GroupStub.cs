@@ -8,15 +8,25 @@ using Xunit;
 
 namespace RandomCoffee.Core.Tests.TestDoubles
 {
-    public class NotifiableStub : INotifiable
+    public class GroupStub : IGroup
     {
         private IEnumerable<Match> _notified;
+        private IEnumerable<Person> _persons;
+
+        public async Task<IEnumerable<Person>> GetMembers(CancellationToken cancellationToken = default)
+        {
+            await Task.Delay(1, cancellationToken);
+            return _persons;
+        }
 
         public async Task Notify(IEnumerable<Match> matches, CancellationToken cancellationToken = default)
         {
             await Task.Delay(1, cancellationToken);
             _notified = matches;
         }
+
+        public void AddMembers(IEnumerable<Person> persons) =>
+            _persons = persons;
 
         public void AssertMatchReceived(string nameOne, string nameTwo)
         {

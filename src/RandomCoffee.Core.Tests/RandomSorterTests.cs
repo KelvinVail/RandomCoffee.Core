@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using RandomCoffee.Core.Entities;
+using RandomCoffee.Core.Sorters;
 using RandomCoffee.Core.Tests.TestDoubles;
 using Xunit;
 
