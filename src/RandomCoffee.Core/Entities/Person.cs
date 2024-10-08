@@ -1,7 +1,6 @@
-﻿namespace RandomCoffee.Core.Entities
+﻿namespace RandomCoffee.Core.Entities;
+
+public record Person
 {
-    public record Person
-    {
-        public string FullName { get; init; }
-    }
+    public string FullName { get; init; }
 }

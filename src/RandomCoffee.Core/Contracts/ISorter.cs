@@ -2,10 +2,9 @@
 using System.Linq;
 using RandomCoffee.Core.Entities;
 
-namespace RandomCoffee.Core.Contracts
+namespace RandomCoffee.Core.Contracts;
+
+public interface ISorter
 {
-    public interface ISorter
-    {
-        IOrderedEnumerable<Person> OrderPersons(IEnumerable<Person> persons);
-    }
+    IOrderedEnumerable<Person> OrderPersons(IEnumerable<Person> persons);
 }
