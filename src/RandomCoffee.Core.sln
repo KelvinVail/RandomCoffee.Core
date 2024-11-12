@@ -16,7 +16,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomCoffee.Yammer", "Rand
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomCoffee.Yammer.Tests", "RandomCoffee.Yammer.Tests\RandomCoffee.Yammer.Tests.csproj", "{E92464CC-D695-4125-A98E-B0596843EB6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomCoffee.Function", "RandomCoffee.Function\RandomCoffee.Function.csproj", "{1B0DA663-97CC-4209-895D-DE27FDAA9BC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomCoffee.Function", "RandomCoffee.Function\RandomCoffee.Function.csproj", "{1B0DA663-97CC-4209-895D-DE27FDAA9BC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomCoffee.Console", "RandomCoffee.Console\RandomCoffee.Console.csproj", "{F4380BDC-BB2E-42F9-AEC0-1DFBB9AFE456}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{1B0DA663-97CC-4209-895D-DE27FDAA9BC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B0DA663-97CC-4209-895D-DE27FDAA9BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B0DA663-97CC-4209-895D-DE27FDAA9BC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4380BDC-BB2E-42F9-AEC0-1DFBB9AFE456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4380BDC-BB2E-42F9-AEC0-1DFBB9AFE456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4380BDC-BB2E-42F9-AEC0-1DFBB9AFE456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4380BDC-BB2E-42F9-AEC0-1DFBB9AFE456}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
